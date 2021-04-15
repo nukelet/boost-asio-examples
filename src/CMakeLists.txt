@@ -1,0 +1,15 @@
+# look for Boost
+SET(Boost_USE_STATIC_LIBS OFF)
+SET(Boost_USE_MULTITHREAD ON)
+FIND_PACKAGE(Boost 1.42.0 REQUIRED COMPONENTS system thread regex)
+IF(Boost_FOUND)
+   INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+   LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+ENDIF(Boost_FOUND)
+
+# required libraries for boost.asio
+SET(USED_LIBS ${Boost_SYSTEM_LIBRARY} ${Boost_THREAD_LIBRARY} ${Boost_REGEX_LIBRARY} PARENT_SCOPE)
+
+
+ADD_SUBDIRECTORY(examples)
+ADD_SUBDIRECTORY(file_transfer)
