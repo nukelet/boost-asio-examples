@@ -9,4 +9,5 @@ TARGET_LINK_LIBRARIES(web_client.o ${USED_LIBS})
 ADD_EXECUTABLE(time_server.o time_server.cpp)
 TARGET_LINK_LIBRARIES(time_server.o ${USED_LIBS})
 
-ADD_SUBDIRECTORY(daytime)
+ADD_SUBDIRECTORY(daytime_tcp)
+ADD_SUBDIRECTORY(daytime_udp)
