@@ -1,0 +1,7 @@
+SET(USED_LIBS ${Boost_SYSTEM_LIBRARY} ${Boost_THREAD_LIBRARY} ${Boost_REGEX_LIBRARY})
+
+ADD_EXECUTABLE(server.o server.cpp)
+TARGET_LINK_LIBRARIES(server.o ${USED_LIBS})
+
+ADD_EXECUTABLE(client.o client.cpp)
+TARGET_LINK_LIBRARIES(client.o ${USED_LIBS})
